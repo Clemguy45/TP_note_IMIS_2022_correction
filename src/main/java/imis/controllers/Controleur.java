@@ -80,7 +80,7 @@ public class Controleur {
         return "plusContact";
     }
 
-    @GetMapping("parMotCle")
+    @PostMapping("parMotCle")
     public String parMotCle(@RequestParam String motcle,Model model){
         // TODO devinez...
         model.addAttribute("motcle", motcle);

@@ -56,8 +56,8 @@ public class Facade {
         return entreprises.stream().map(Entreprise::toDTO).collect(Collectors.toList());
     }
 
-    public Object getEntrepriseParMotCles(String motcle) {
-        Query query = em.createQuery("select e from Entreprise e where UPPER(:motcle) member of e.motcles", Entreprise.class).setParameter("motcle", motcle);
+    public List<EntrepriseDTO> getEntrepriseParMotCles(String motcle) {
+        Query query = em.createQuery("select e from Entreprise e where :motcle member of e.motcles", Entreprise.class).setParameter("motcle", motcle);
         List<Entreprise> entreprises = query.getResultList();
         return entreprises.stream().map(Entreprise::toDTO).collect(Collectors.toList());
     }

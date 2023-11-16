@@ -4,6 +4,7 @@ import imis.dto.CreerEntrepriseDTO;
 import imis.dto.EntrepriseDTO;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -91,7 +92,9 @@ public class Entreprise {
         entreprise.setNom(dto.getNom());
         entreprise.setSiret(dto.getSiret());
         entreprise.setAdresse(dto.getAdresse());
-        entreprise.setMotcles(dto.getMotCle());
+        List<String> motCle = new ArrayList<>();
+        motCle.add(dto.getNom());
+        entreprise.setMotcles(motCle);
         return entreprise;
     }
 

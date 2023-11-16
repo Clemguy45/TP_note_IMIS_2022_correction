@@ -24,8 +24,8 @@
    <button type="submit">plusContact</button>
 </form>
 
-<form th:action="@{/parMotCle}" th:object="${motcle}" method="get">
-    Mot-clé : <input type="text" th:value="${motcle}"/>
+<form th:action="@{/parMotCle}" th:object="${motcle}" method="post">
+    Mot-clé : <input name="motcle" type="text" th:value="${motcle}"/>
     <button type="submit">recherche par mot clé</button>
 </form>
 
